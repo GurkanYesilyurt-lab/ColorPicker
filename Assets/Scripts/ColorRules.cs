@@ -10,10 +10,11 @@ public class ColorRules : MonoBehaviour
 
     private void Start() {
         InitalizeColors();
+        Debug.Log(new string("bluegreen".OrderBy(c => c).ToArray()));
         MyColors blue = new MyColors("Blue", "0000FF", "belu");
-        MyColors yellow = new MyColors("Yellow", "FFFF00", "ellowy");
+        MyColors green = new MyColors("Green", "00FF00", "beelllouwy");
        MyColors mynewcolor= MergeColors(blue, blue);
-        Debug.Log(mynewcolor.name);
+      //  Debug.Log(mynewcolor.name);
     }
 
 
@@ -43,13 +44,26 @@ public class ColorRules : MonoBehaviour
         MyColors orange = new MyColors("Orange", "FFA500", "deellorwy");
         colorList.Add(orange); 
         MyColors purple = new MyColors("Purple", "800080", "bdeelru");
-        colorList.Add(purple); 
-
+        colorList.Add(purple);
+        MyColors turquoise = new MyColors("Turquoise", "00EDFF", "beeeglnru");
+        colorList.Add(turquoise);
     }
 
 
+   public MyColors GetCorrectColor(string colorName ) {
+        foreach (var color in colorList) {
+            if (colorName==color.name) {
+                return color;
+            }
+        }
 
+        MyColors black = new MyColors("Black", "000000", "black");
+        return black;
+    }
 }
+
+
+
 
 
 public class MyColors {
