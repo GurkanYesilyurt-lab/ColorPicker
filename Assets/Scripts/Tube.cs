@@ -16,6 +16,11 @@ public class Tube : MonoBehaviour
         ColorUtility.TryParseHtmlString(myColor.colorCode, out color);
         fillImage.color = color;
 
+
+    }
+
+    public void TestMessage() {
+        Debug.Log("Something");
     }
 
 

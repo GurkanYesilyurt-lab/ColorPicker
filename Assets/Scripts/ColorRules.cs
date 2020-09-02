@@ -8,9 +8,12 @@ public class ColorRules : MonoBehaviour
     public List<MyColors> colorList;
 
 
-    private void Start() {
+    private void Awake() {
         InitalizeColors();
-        Debug.Log(new string("bluegreen".OrderBy(c => c).ToArray()));
+
+    }
+
+    private void Start() {
         MyColors blue = new MyColors("Blue", "0000FF", "belu");
         MyColors green = new MyColors("Green", "00FF00", "beelllouwy");
        MyColors mynewcolor= MergeColors(blue, blue);
@@ -33,20 +36,24 @@ public class ColorRules : MonoBehaviour
 
     void InitalizeColors() {
         colorList = new List<MyColors>();
-        MyColors red = new MyColors("Red", "FF0000", "der");
+        MyColors red = new MyColors("Red", "#FF0000FF", "der");
         colorList.Add(red);
-        MyColors blue = new MyColors("Blue", "0000FF", "belu");
+        MyColors blue = new MyColors("Blue", "#0000FFFF", "belu");
         colorList.Add(blue);
-        MyColors yellow = new MyColors("Yellow", "FFFF00", "ellowy");
+        MyColors yellow = new MyColors("Yellow", "#FFFF00FF", "ellowy");
         colorList.Add(yellow); 
-        MyColors green = new MyColors("Green", "00FF00", "beelllouwy");
+        MyColors green = new MyColors("Green", "#00FF00FF", "beelllouwy");
         colorList.Add(green); 
-        MyColors orange = new MyColors("Orange", "FFA500", "deellorwy");
+        MyColors orange = new MyColors("Orange", "#FFA500FF", "deellorwy");
         colorList.Add(orange); 
-        MyColors purple = new MyColors("Purple", "800080", "bdeelru");
+        MyColors purple = new MyColors("Purple", "#800080FF", "bdeelru");
         colorList.Add(purple);
-        MyColors turquoise = new MyColors("Turquoise", "00EDFF", "beeeglnru");
+        MyColors turquoise = new MyColors("Turquoise", "#00EDFFFF", "beeeglnru");
         colorList.Add(turquoise);
+        MyColors black = new MyColors("Black", "#000000FF", "black");
+        colorList.Add(black);
+        MyColors white = new MyColors("White", "#FFFFFFFF", "white");
+        colorList.Add(white);
     }
 
 
